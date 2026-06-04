@@ -1155,23 +1155,28 @@ body.detail-open main {
   }
 
   .hero {
-    min-height: 100svh;
-    padding: 132px 18px 34px;
+    min-height: max(100svh, 720px);
+    padding: 0 18px 34px;
   }
 
   .hero-bg {
-    top: 76px;
-    height: 74svh;
-    object-fit: cover;
-    object-position: 54% 34%;
-    opacity: 0.96;
+    inset: auto 12px auto 12px;
+    top: 132px;
+    width: calc(100% - 24px);
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    object-position: center;
+    opacity: 1;
     filter: brightness(1.22) contrast(1.06) saturate(1.12);
-    transform: scale(1.01);
+    transform: none;
   }
 
   .hero-particles {
-    height: 70svh;
-    top: 76px;
+    inset: auto 12px auto 12px;
+    top: 132px;
+    width: calc(100% - 24px);
+    height: calc((100vw - 24px) * 0.5625);
     bottom: auto;
   }
 
@@ -1182,25 +1187,30 @@ body.detail-open main {
 
   .hero-overlay {
     background:
-      linear-gradient(0deg, rgba(5, 6, 5, 0.96) 0%, rgba(5, 6, 5, 0.74) 30%, rgba(5, 6, 5, 0.18) 66%, rgba(5, 6, 5, 0.5) 100%),
+      linear-gradient(0deg, rgba(5, 6, 5, 0.98) 0%, rgba(5, 6, 5, 0.9) 30%, rgba(5, 6, 5, 0.16) 52%, rgba(5, 6, 5, 0.58) 100%),
       linear-gradient(90deg, rgba(5, 6, 5, 0.18), rgba(5, 6, 5, 0.08));
   }
 
   .hero-copy {
-    bottom: 28px;
-    width: calc(100vw - 36px);
-    max-width: calc(100vw - 36px);
+    top: calc(132px + (100vw - 24px) * 0.5625 + 58px);
+    bottom: auto;
+    left: 18px;
+    right: 18px;
+    width: auto;
+    max-width: none;
   }
 
   .hero-meta {
-    top: 150px;
+    top: calc(132px + (100vw - 24px) * 0.5625 + 20px);
     right: 18px;
     font-size: 14px;
   }
 
   .hero-line {
+    max-width: 100%;
     font-size: 14px;
     line-height: 1.72;
+    word-break: break-all;
   }
 
   h1 {
@@ -1262,5 +1272,34 @@ body.detail-open main {
 
   .detail-figure img {
     max-height: 520px;
+  }
+
+  .thanks {
+    min-height: 58svh;
+    padding: 72px 18px;
+  }
+
+  .thanks-bg {
+    object-fit: contain;
+    object-position: center;
+    opacity: 0.62;
+    filter: blur(1px) brightness(1.18) contrast(1.04);
+    transform: none;
+    animation: none;
+  }
+
+  .thanks-overlay {
+    background:
+      radial-gradient(circle at 50% 44%, rgba(140, 255, 22, 0.12), transparent 34%),
+      rgba(5, 6, 5, 0.7);
+  }
+
+  .thanks-copy h2 {
+    font-size: clamp(58px, 20vw, 92px);
+    line-height: 0.9;
+  }
+
+  .thanks-copy span {
+    font-size: 14px;
   }
 }

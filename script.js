@@ -400,10 +400,10 @@ const setupHeroParticles = () => {
     do {
       shapeCtx.font = `800 ${fontSize}px "Noto Serif SC", "Source Han Sans SC", serif`;
       fontSize -= 4;
-    } while (shapeCtx.measureText("主要作品").width > maxWidth && fontSize > 76);
+    } while (shapeCtx.measureText("AI作品集").width > maxWidth && fontSize > 76);
 
     shapeCtx.font = `800 ${fontSize}px "Noto Serif SC", "Source Han Sans SC", serif`;
-    shapeCtx.fillText("主要作品", width * 0.58, height * 0.43);
+    shapeCtx.fillText("AI作品集", width * 0.58, height * 0.43);
 
     const imageData = shapeCtx.getImageData(0, 0, width, height).data;
     const gap = isCoarsePointer || width < 760 ? 18 : 12;
